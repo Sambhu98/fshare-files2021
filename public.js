@@ -16,6 +16,7 @@ const emailForm = document.querySelector("#emailForm");
 const toast = document.querySelector(".toast");
 
 //const baseURL = "https://fi1e-share.herokuapp.com";
+//https://share-files2021.herokuapp.com/
 const baseURL = "https://share-files2021.herokuapp.com";
 const uploadURL = `${baseURL}/api/files`;
 const emailURL = `${baseURL}/api/files/send`;
@@ -57,7 +58,7 @@ dropZone.addEventListener("drop", (e) => {
   dropZone.classList.remove("dragged");
 });
 
-fileInput.addEventListener("change",() =>{
+fileInput.addEventListener("change", () => {
   if (fileInput.files[0].size > maxAllowedSize) {
     showToast("Max file size is 100MB");
     fileInput.value = ""; // reset the input
@@ -78,7 +79,7 @@ fileURL.addEventListener("click", () => {
 });
 
 const uploadFile = () => {
- 
+
 
   const file = fileInput.files[0];
   const formData = new FormData();
